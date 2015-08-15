@@ -1,0 +1,12 @@
+head
+  title 今日のオカズ
+body
+  +index
+  
+template(name='index')
+  h1 hello
+  form
+    input(required type='url')
+  each sites
+    img(src="http://free.pagepeeker.com/v2/thumbs.php?size=x&url=#{url}")
+    p #{title}
