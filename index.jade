@@ -2,14 +2,14 @@ head
   title 今日のオカズ
   script(src='//cdn.jsdelivr.net/flexboxgrid/6.2.0/flexboxgrid.min.css')
 body
-  .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
-    header.mdl-layout__header
-      .mdl-layout__header-row
-        span.mdl-layout-title 今日のオカズ 
-      .mdl-layout__tab-bar.mdl-js-ripple-effect
-        a.mdl-layout__tab.is-active(href='#scroll-tab-1') Tab 1
-        a.mdl-layout__tab(href='#scroll-tab-2') Tab 2
-        a.mdl-layout__tab(href='#scroll-tab-3') Tab 3
+  //- .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+  //-   header.mdl-layout__header
+  //-     .mdl-layout__header-row
+  //-       span.mdl-layout-title 今日のオカズ 
+  //-     .mdl-layout__tab-bar.mdl-js-ripple-effect
+  //-       a.mdl-layout__tab.is-active(href='#scroll-tab-1') Tab 1
+  //-       a.mdl-layout__tab(href='#scroll-tab-2') Tab 2
+  //-       a.mdl-layout__tab(href='#scroll-tab-3') Tab 3
   +index
   
 template(name='index')
@@ -24,8 +24,6 @@ template(name='index')
           img(style='max-width:100%' src="http://free.pagepeeker.com/v2/thumbs.php?size=x&url=#{url}")
         .mdl-card__supporting-text
           h2.mdl-card__title-text #{title}
-          | Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          | Mauris sagittis pellentesque lacus eleifend lacinia...
         .mdl-card__actions.mdl-card--border
           a(target='_brank' href='#{url}').mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
             p アクセス
