@@ -3,8 +3,10 @@ if Meteor.isClient
     @layout 'layout'
     @render 'siteList'
   Router.route '/popup/stock',->
-    console.log @params
     Meteor.call 'insertSite',@params.query.url
+    setTimeout ->
+      window.open('about:blank','_self').close();
+    ,1000
     @render 'stockSuccess'
 
 if Meteor.isServer
