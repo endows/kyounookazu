@@ -1,16 +1,16 @@
 if Meteor.isClient
   Router.map ->
-    @route '/',
-      waitOn: ->
-        IRLibLoader.load '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
+    # @route '/',
+    #   action: ->
+    #      @render 'index'
+    @route '/popup/stock',
       action: ->
-         @render 'index'
+         @render 'stockSuccess'
 if Meteor.isServer
   Router.map ->
     @route '/api/site',
       where:'server'
       action:->
-        console.log @params.query
         Meteor.call 'insertSite',@params.query.url
         @response.setHeader('access-control-allow-origin', '*');
         @render 'ok'
