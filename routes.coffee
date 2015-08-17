@@ -10,6 +10,7 @@ if Meteor.isServer
     @route '/api/site',
       where:'server'
       action:->
+        console.log @params.query
         Meteor.call 'insertSite',@params.query.url
         @response.setHeader('access-control-allow-origin', '*');
         @render 'ok'
