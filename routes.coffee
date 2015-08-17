@@ -1,11 +1,12 @@
 if Meteor.isClient
-  Router.map ->
-    # @route '/',
-    #   action: ->
-    #      @render 'index'
-    @route '/popup/stock',
-      action: ->
-         @render 'stockSuccess'
+  Router.route '/',->
+    @layout 'layout'
+    @render 'siteList'
+  Router.route '/popup/stock',->
+    console.log @params
+    Meteor.call 'insertSite',@params.query.url
+    @render 'stockSuccess'
+
 if Meteor.isServer
   Router.map ->
     @route '/api/site',

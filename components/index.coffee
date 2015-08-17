@@ -1,9 +1,9 @@
 if Meteor.isClient
-  Template.index.helpers
+  Template.siteList.helpers
     'sites':Stores.allSite
     'stockedSites':Stores.stockedSites
     'user_id':Meteor.userId
-  Template.index.events
+  Template.siteList.events
     'submit form':(e)->
       e.preventDefault()
       url = $('input').val()
