@@ -5,4 +5,11 @@ if Meteor.isClient
         IRLibLoader.load '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
       action: ->
          @render 'index'
-    return
+if Meteor.isServer
+  Router.map ->
+    @route '/api/site',
+      where:'server'
+      action:->
+        Meteor.call 'insertSite',@params.query.url
+        @response.setHeader('access-control-allow-origin', '*');
+        @render 'ok'

@@ -1,7 +1,7 @@
 if Meteor.isClient
   Template.index.helpers
-    'sites':->
-      Stores.allSite()
+    'sites':Stores.allSite
+    'stockedSites':Stores.stockedSites
   Template.index.events
     'submit form':(e)->
       e.preventDefault()

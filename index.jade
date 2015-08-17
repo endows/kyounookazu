@@ -1,28 +1,26 @@
 head
   title 今日のオカズ
 body
-  //- a(href='http://click.dtiserv2.com/Click/1173002-173-179551', target='_blank')
-  //-   img(src='http://affiliate.dtiserv.com/image/ccg/173-150-01.jpg', border='0')
-
   +index
-  iframe(src='http://www.ppc-direct.com/index109.html?affid=179551', width='950', height='250', frameborder='no', scrolling='no')
-
   
 template(name='index')
-  +ads
-  form(action='#')
-    .mdl-textfield.mdl-js-textfield.textfield-demo
-      input(required type='url').mdl-textfield__input
-      label.mdl-textfield__label(for='sample1') URL...
-  .mdl-grid
-    each sites
-      .mdl-card.mdl-shadow--2dp.mdl-cell--4-col.mdl-cell
-        .mdl-card__title
-          img(style='max-width:100%' src="http://free.pagepeeker.com/v2/thumbs.php?size=x&url=#{url}")
-        .mdl-card__supporting-text
-          h2.mdl-card__title-text #{title}
-        .mdl-card__actions.mdl-card--border
-          a(target='_brank' href='#{url}').mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
-            p アクセス
-          a(target='_brank' href='#{url}').mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
-            p ストック
+  //- a(href='javascript:(function(){%24.get(%22http%3A%2F%2Flocalhost%3A3000%2Fapi%2Fsite%22%2C%7Burl%3Alocation.href%7D)%3B})();') Click Me
+  .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+    header.mdl-layout__header
+      .mdl-layout__header-row
+        // Title 
+        span.mdl-layout-title 今日のオカズ
+    h5 あなたがストックしたオカズ
+    .mdl-grid
+      each stockedSites
+        .mdl-card.mdl-shadow--2dp.mdl-cell--4-col.mdl-cell
+          .mdl-card__title
+            img(style='max-width:100%' src="http://free.pagepeeker.com/v2/thumbs.php?size=x&url=#{url}")
+          .mdl-card__supporting-text
+            h2.mdl-card__title-text #{title}
+          .mdl-card__actions.mdl-card--border
+            a(target='_brank' href='#{url}').mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
+              p アクセス
+            a(target='_brank' href='#{url}').mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
+              p ストック
+    iframe(src='http://dynamic.dtiserv.com/9103055/9103055.html?affid=179551', width='835', height='290', frameborder='no', scrolling='no')
