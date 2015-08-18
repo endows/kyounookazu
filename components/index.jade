@@ -1,16 +1,26 @@
 template(name='siteList')
   h5 あなたがストックしたオカズ
   .mdl-grid
-    each stockedSites
-      .mdl-card.mdl-shadow--2dp.mdl-cell--12-col.mdl-cell
-        .mdl-cell--3-col.mdl-cell
-          img(style='max-width:100%' src="http://free.pagepeeker.com/v2/thumbs.php?size=x&url=#{url}")
-        .mdl-cell--9-col.mdl-cell
-          //- .mdl-card__title-text #{title}
-          p #{title}
-        .mdl-card__actions.mdl-card--border
-          a(href='#{url}' target="_blank").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
-            p アクセスする
+    table.mdl-data-table.mdl-js-data-table.mdl-data-table--selectable.mdl-shadow--2dp
+      tbody
+        each stockedSites
+          tr
+            td
+              img(style='width:100px' src="http://free.pagepeeker.com/v2/thumbs.php?size=x&url=#{url}")
+            td #{title}
+            td
+              a(href='#{url}' target="_blank").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
+                p アクセスする
+
+      //- .mdl-card.mdl-shadow--2dp.mdl-cell--12-col.mdl-cell
+      //-   .mdl-cell--3-col.mdl-cell
+      //-     img(style='max-width:100%' src="http://free.pagepeeker.com/v2/thumbs.php?size=x&url=#{url}")
+      //-   .mdl-cell--9-col.mdl-cell
+      //-     //- .mdl-card__title-text #{title}
+      //-     p #{title}
+      //-   .mdl-card__actions.mdl-card--border
+      //-     a(href='#{url}' target="_blank").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
+      //-       p アクセスする
   h5 今日人気のオカズ
   .mdl-grid
     each rankedSites
