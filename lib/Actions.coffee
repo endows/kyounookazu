@@ -7,9 +7,10 @@ if Meteor.isServer
         Site.insert
           url:url
           title:websiteData.title
-          user_id:@userId
+      Meteor.syncCall('stockSite',url)
     'stockSite': (url) ->
       site = Site.findOne({url:url})
-      Stock.insert
-        user_id:@userId
-        site_id:site._id
+      if ! Stock.findOne({site_id:site._id,user_id:@userId})
+        Stock.insert
+          user_id:@userId
+          site_id:site._id

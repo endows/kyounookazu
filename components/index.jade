@@ -6,7 +6,8 @@ template(name='siteList')
         .mdl-card__title
           img(style='max-width:100%' src="http://free.pagepeeker.com/v2/thumbs.php?size=x&url=#{url}")
         .mdl-card__supporting-text
-          h2.mdl-card__title-text #{title}
+          //- .mdl-card__title-text #{title}
+          p #{title}
         .mdl-card__actions.mdl-card--border
           a(href='#{url}' target="_blank").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
             p アクセスする
