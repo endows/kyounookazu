@@ -8,3 +8,12 @@ if Meteor.isClient
     my_stocks.map (stock)->
       site_ids.push stock.site_id
     Site.find({_id:{$in:site_ids}}).fetch().reverse()
+  Stores.siteRanking = ->
+    stocks = Stock.find().fetch()
+    groupedDates = _.groupBy(_.pluck(stocks, 'site_id'));
+    result = []
+    Object.keys(groupedDates).forEach (site_id)->
+      _site = Site.findOne(site_id)
+      _site.stockCnt = groupedDates[site_id].length
+      result.push _site
+    result

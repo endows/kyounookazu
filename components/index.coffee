@@ -3,6 +3,7 @@ if Meteor.isClient
     'sites':Stores.allSite
     'stockedSites':Stores.stockedSites
     'user_id':Meteor.userId
+    'rankedSites':Stores.siteRanking
   Template.siteList.events
     'submit form':(e)->
       e.preventDefault()

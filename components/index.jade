@@ -11,4 +11,17 @@ template(name='siteList')
         .mdl-card__actions.mdl-card--border
           a(href='#{url}' target="_blank").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
             p アクセスする
+  h5 今日人気のオカズ
+  .mdl-grid
+    each rankedSites
+      .mdl-card.mdl-shadow--2dp.mdl-cell--4-col.mdl-cell
+        .mdl-card__title
+          img(style='max-width:100%' src="http://free.pagepeeker.com/v2/thumbs.php?size=x&url=#{url}")
+        .mdl-card__supporting-text
+          //- .mdl-card__title-text #{title}
+          p #{title}
+          h1 #{stockCnt}
+        .mdl-card__actions.mdl-card--border
+          a(href='#{url}' target="_blank").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
+            p アクセスする
   iframe(src='http://dynamic.dtiserv.com/9103055/9103055.html?affid=179551', width='835', height='290', frameborder='no', scrolling='no')
