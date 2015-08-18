@@ -20,8 +20,9 @@ template(name='siteList')
         .mdl-card__supporting-text
           //- .mdl-card__title-text #{title}
           p #{title}
-          h1 #{stockCnt}
+          .mdl-badge(data-badge='#{stockCnt}') ストックされた数
         .mdl-card__actions.mdl-card--border
           a(href='#{url}' target="_blank").mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect
             p アクセスする
-  iframe(src='http://dynamic.dtiserv.com/9103055/9103055.html?affid=179551', width='835', height='290', frameborder='no', scrolling='no')
+          a(href='#{url}' target="_blank" data-badge='123').mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect.mdl-badge
+            p ストックする

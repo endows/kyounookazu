@@ -16,4 +16,6 @@ if Meteor.isClient
       _site = Site.findOne(site_id)
       _site.stockCnt = groupedDates[site_id].length
       result.push _site
+    result.sort (a,b)->
+      return a.stockCnt < b.stockCnt
     result
