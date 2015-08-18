@@ -6,6 +6,7 @@ template(name='layout')
     header.mdl-layout__header
       .mdl-layout__header-row
         //- span.mdl-layout-title 今日のオカズ
-        a(href='javascript:(function(){var%20url%3Dlocation.href%3Bwindow.open(%22http%3A%2F%2Flocalhost%3A3000%2Fpopup%2Fstock%3Furl%3D%22%2Burl%2C%22windowName%22%2C%22height%3D200%2Cwidth%3D200%22)%3B})();') ストック
+        a.mdl-button.mdl-js-button.mdl-button--raised(href='javascript:(function(){var%20url%3Dlocation.href%3Bwindow.open(%22http%3A%2F%2Fkyounookazu.tk%2Fpopup%2Fstock%3Furl%3D%22%2Burl%2C%22windowName%22%2C%22height%3D200%2Cwidth%3D200%22)%3B})();')
+          |ストックする
         span このボタンをアドレスバーにドラック&ドロップ
     +yield
