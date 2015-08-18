@@ -2,10 +2,10 @@ template(name='siteList')
   h5 あなたがストックしたオカズ
   .mdl-grid
     each stockedSites
-      .mdl-card.mdl-shadow--2dp.mdl-cell--4-col.mdl-cell
-        .mdl-card__title
+      .mdl-card.mdl-shadow--2dp.mdl-cell--12-col.mdl-cell
+        .mdl-cell--3-col.mdl-cell
           img(style='max-width:100%' src="http://free.pagepeeker.com/v2/thumbs.php?size=x&url=#{url}")
-        .mdl-card__supporting-text
+        .mdl-cell--9-col.mdl-cell
           //- .mdl-card__title-text #{title}
           p #{title}
         .mdl-card__actions.mdl-card--border
